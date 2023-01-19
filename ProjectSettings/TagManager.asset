@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
-  - Collectible item
-  - trap
+  - Orange
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -14,10 +13,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
   - Ground
-  - Wall
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -41,12 +40,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: background
-    uniqueID: 1018377179
+  - name: Background
+    uniqueID: 3992788615
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: terrain
-    uniqueID: 2510995027
+  - name: Ground
+    uniqueID: 2568103341
     locked: 0
