@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int items = 0;
+    public static int items = 0;
 
     [SerializeField] private Text counterOfItemsText;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -15,6 +15,14 @@ public class ItemCollector : MonoBehaviour
             Destroy(collision.gameObject);
             items++;
             counterOfItemsText.text = "Oranges: " + items;
+        }
+    }
+
+    private void Update()
+    {
+        if (PlayerManager.isGameOver)
+        {
+            items = 0;
         }
     }
 }
