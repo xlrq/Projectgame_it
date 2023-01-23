@@ -19,6 +19,7 @@ public class PlayerDeath : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             die();
+            PlayerManager.isGameOver = true;
         }
     }
 
@@ -26,10 +27,5 @@ public class PlayerDeath : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
-    }
-
-    private void restartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
