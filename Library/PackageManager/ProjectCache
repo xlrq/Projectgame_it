@@ -6,8 +6,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638098164079987096
-    m_Hash: 367685354
+      ticks: 638101007799235706
+    m_Hash: 729826132
   m_LockFileStatus:
     m_FilePath: "C:/Users/nikit/OneDrive/\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438/Project
       game/New folder/Projectgame_it/Packages/packages-lock.json"
@@ -15,8 +15,8 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638098164097702586
-    m_Hash: 2612899480
+      ticks: 638101007799235706
+    m_Hash: 1567722408
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

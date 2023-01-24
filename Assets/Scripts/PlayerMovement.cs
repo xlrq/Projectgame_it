@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
+        if (dirX > 0.01f)
+            transform.localScale = Vector3.one;
+        else if (dirX < -0.01f)
+            transform.localScale = new Vector3(-1, 1, 1);
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && isGrounded())
@@ -43,15 +47,9 @@ public class PlayerMovement : MonoBehaviour
     {
         movementState state;
 
-        if (dirX > 0f)
+        if (dirX != 0f)
         {
             state = movementState.running;
-            sprite.flipX = false;
-        }
-        else if (dirX < 0f)
-        {
-            state = movementState.running;
-            sprite.flipX = true;
         }
         else
         {
