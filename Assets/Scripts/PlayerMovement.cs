@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D coll;
-    private SpriteRenderer sprite;
     private Animator anim;
 
     [SerializeField] private LayerMask jumpableGround;
@@ -21,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
         coll = GetComponent<BoxCollider2D>();
     }
 

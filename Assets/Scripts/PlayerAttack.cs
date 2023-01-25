@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Fire1") && cooldownTimer > attackCooldown && !PlayerManager.isGameOver)
+        if (Input.GetButton("Fire1") && cooldownTimer > attackCooldown && !PlayerManager.isGameOver && !PlayerManager.isLevelCompleted)
             Attack();
 
         cooldownTimer += Time.deltaTime;
