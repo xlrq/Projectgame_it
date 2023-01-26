@@ -22,15 +22,12 @@ public class PlayerDeath : MonoBehaviour
         {
             bGM.Pause();
             die();
-            PlayerManager.isGameOver = true;
         }
     }
 
-    private void die()
+    public void die()
     {
-        rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
-        deathSound.Play();
     }
 
 }
