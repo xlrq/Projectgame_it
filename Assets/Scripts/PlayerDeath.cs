@@ -9,6 +9,7 @@ public class PlayerDeath : MonoBehaviour
     private Animator anim;
     [SerializeField] private AudioSource deathSound;
     [SerializeField] private AudioSource bGM;
+    public bool dead;
 
     private void Start()
     {
@@ -27,7 +28,12 @@ public class PlayerDeath : MonoBehaviour
 
     public void die()
     {
-        anim.SetTrigger("Death");
+        // Trigger only once
+        if(!dead){
+            dead = true;
+            anim.SetTrigger("Death");
+            PlayerManager.isGameOver = true;
+            rb.bodyType = RigidbodyType2D.Static;
+        }
     }
-
 }
