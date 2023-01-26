@@ -8,6 +8,7 @@ public class Finish : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     [SerializeField] private AudioSource finishSound;
+    [SerializeField] private AudioSource bGM;
 
     private void Start()
     {        
@@ -17,10 +18,14 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        rb.bodyType = RigidbodyType2D.Static;
-        anim.SetTrigger("Raise");
-        finishSound.Play();
-        StartCoroutine(completeLevel());
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            bGM.Pause();
+            rb.bodyType = RigidbodyType2D.Static;
+            anim.SetTrigger("Raise");
+            finishSound.Play();
+            StartCoroutine(completeLevel());
+        }
     }
 
     IEnumerator completeLevel()

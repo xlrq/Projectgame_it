@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 5218848335513039582}
   - component: {fileID: 3888900831373051534}
   - component: {fileID: 4938009907483997807}
-  - component: {fileID: 8345652907648147469}
+  - component: {fileID: 3940214976091175593}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 367c94f0dfc829a41b7e64ef03b25b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 0}
+  bGM: {fileID: 0}
 --- !u!114 &5218848335513039582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,7 +444,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &8345652907648147469
+--- !u!82 &3940214976091175593
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

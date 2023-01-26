@@ -9,6 +9,7 @@ public class PlayerDeath : MonoBehaviour
     private Animator anim;
     [SerializeField] private AudioSource deathSound;
     [SerializeField] private AudioSource bGM;
+    [SerializeField] private AudioSource damageSound;
     public bool dead;
 
     private void Start()
@@ -21,7 +22,6 @@ public class PlayerDeath : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
-            bGM.Pause();
             die();
         }
     }
@@ -30,10 +30,20 @@ public class PlayerDeath : MonoBehaviour
     {
         // Trigger only once
         if(!dead){
+            damageSound.Play();
             dead = true;
             anim.SetTrigger("Death");
-            PlayerManager.isGameOver = true;
+            bGM.Pause();
+            deathSound.Play();
             rb.bodyType = RigidbodyType2D.Static;
+            StartCoroutine(overGame());
         }
     }
+
+    IEnumerator overGame ()
+    {
+        yield return new WaitForSeconds(1);
+        PlayerManager.isGameOver = true;
+    }
+
 }

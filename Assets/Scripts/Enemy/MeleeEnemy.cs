@@ -16,7 +16,7 @@ public class MeleeEnemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
 
     [Header("Attack Sound")]
-    [SerializeField] private AudioClip attackSound;
+    [SerializeField] private AudioSource attackSound;
 
     //References
     private Animator anim;
