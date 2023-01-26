@@ -7,7 +7,7 @@ public class EnemyProjectile : MonoBehaviour // Will damage the player every tim
     private bool hit;
     private float lifetime;
 
-    [SerializeField] private float resetTime;
+    private float resetTime = 3;
     
     private Animator anim;
     private BoxCollider2D boxCollider;
@@ -41,20 +41,13 @@ public class EnemyProjectile : MonoBehaviour // Will damage the player every tim
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        hit = true;
-        boxCollider.enabled = false;
-        anim.SetTrigger("Explode");
-        if (collision.tag == "Player")
+        if (collision.tag == "Player"){
+            hit = true;
+            boxCollider.enabled = false;
+
             collision.GetComponent<Health>().TakeDamage(1);
-
-        /*hit = true;
-        base.OnTriggerEnter2D(collision); //Execute logic from parent script first
-        coll.enabled = false;*/
-
-        if (anim != null)
-            anim.SetTrigger("Explode"); //When the object is a fireball explode it
-        else 
-            gameObject.SetActive(false); // deactivates when it hits an object
+            gameObject.SetActive(false); 
+        }
     }
 
     private void Deactivate()

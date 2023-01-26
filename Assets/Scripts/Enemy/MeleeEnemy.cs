@@ -31,9 +31,10 @@ public class MeleeEnemy : MonoBehaviour
     }
 
     
-    protected void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggernter2D(Collider2D collision)
     {
-        collision.GetComponent<EnemyHealth>().TakeDamage(1);
+        if(collision)
+            collision.GetComponent<EnemyHealth>().TakeDamage(1);
     }
 
     private void Update()
@@ -56,6 +57,7 @@ public class MeleeEnemy : MonoBehaviour
             enemyPatrol.enabled = !PlayerInSight();
     }
 
+    // todo: remove duplicate code, inherit from general enemy class
     private bool PlayerInSight()
     {
         RaycastHit2D hit = 
@@ -65,8 +67,8 @@ public class MeleeEnemy : MonoBehaviour
 
         if (hit.collider != null)
             playerHealth = hit.transform.GetComponent<Health>();
-        
-        return hit.collider != null;
+
+        return ((hit.collider != null) && playerHealth.currentHealth > 0);
     }
 
     private void OnDrawGizmos()
