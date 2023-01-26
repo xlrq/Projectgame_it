@@ -9,4 +9,9 @@ public class MenuEvents : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+
+    public void resetCounter ()
+    {
+        ItemCollector.items = 0;
+    }
 }
